@@ -1,5 +1,23 @@
 #!/usr/bin/python
 # Uses a configured Adafruit_CharLCDPlate.pt
+# Reference functions:
+
+#def dogeaddress(self):
+#        sleep(1)
+#        dogechain = urllib2.urlopen('http://dogechain.info/chain/Dogecoin/q/addressbalance/', self)
+#        balance = dogechain.read()
+#        lcd.clear
+#        lcd.backlight(lcd.GREEN)
+#        lcd.message("BALANCE:", \n, balance)
+#        
+#    def dogevalue():
+#        import api_parser
+#        lcd.clear
+#        lcd.backlight(lcd.BLUE)
+#        lcd.message("VALUE:", \n, sys.argv[1])
+        
+
+
 
 from time import sleep
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
