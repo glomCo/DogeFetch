@@ -443,11 +443,14 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
         dogechain = urllib2.urlopen('http://dogechain.info/chain/Dogecoin/q/addressbalance/', self)
         balance = dogechain.read()
         lcd.clear
+        lcd.backlight(lcd.GREEN)
         lcd.message("BALANCE:", \n, balance)
         
     def dogevalue():
         import api_parser
-        print sys.argv[1]
+        lcd.clear
+        lcd.backlight(lcd.BLUE)
+        lcd.message("VALUE:", \n, sys.argv[1])
         
 
 if __name__ == '__main__':
@@ -463,7 +466,7 @@ if __name__ == '__main__':
     lcd = Adafruit_CharLCDPlate()
     lcd.begin(16, 2)
     lcd.clear()
-    lcd.backlight(GREEN)
+    lcd.backlight(RED)
     lcd.message("Hello, I'm", \n "DogeFetch!")
     
     #lcd.message("BALANCE:", \n, balance)
