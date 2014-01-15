@@ -10,6 +10,7 @@
 
 from Adafruit_I2C import Adafruit_I2C
 from time import sleep
+import urllib2
 
 class Adafruit_CharLCDPlate(Adafruit_I2C):
 
@@ -436,6 +437,17 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
 
     # ----------------------------------------------------------------------
     # Test code
+    
+    def dogeaddress(self):
+        sleep(1)
+        dogechain = urllib2.urlopen('http://dogechain.info/chain/Dogecoin/q/addressbalance/', self)
+        balance = dogechain.read()
+        lcd.clear
+        lcd.message("BALANCE:", \n, balance)
+        
+    def dogevalue():
+        # use php here
+        
 
 if __name__ == '__main__':
 
@@ -443,16 +455,14 @@ if __name__ == '__main__':
     # crypsty = value
     # remember to import address
 
-    import urllib2
+    
 
-    dogechain = urllib2.urlopen('http://dogechain.info/chain/Dogecoin/q/addressbalance/ADDRESSHERE')
 
-    balance = dogechain.read()
 
     lcd = Adafruit_CharLCDPlate()
     lcd.begin(16, 2)
     lcd.clear()
-    lcd.message("Hello, I'm", \n "Doge-Bot!")
+    lcd.message("Hello, I'm", \n "DogeFetch!")
     #lcd.message("BALANCE:", \n, balance)
     sleep(1)
 
@@ -460,15 +470,12 @@ if __name__ == '__main__':
            ('Teal', lcd.TEAL), ('Blue'  , lcd.BLUE)  , ('Violet', lcd.VIOLET),
            ('Off' , lcd.OFF) , ('On'    , lcd.ON))
 
-    btn = ((lcd.SELECT, 'Select', lcd.ON),
-           (lcd.LEFT  , 'Left'  , lcd.RED),
-           (lcd.UP    , 'Up'    , lcd.BLUE),
-           (lcd.DOWN  , 'Down'  , lcd.GREEN),
-           (lcd.RIGHT , 'Right' , lcd.VIOLET))
+    btn = ((lcd.LEFT, 'Fetching Balance...', lcd.RED, lcd.addressvalue(DLLAyRd9qA6LVcJiWk2wMNjEqEVUVwbARc)),
+           #(lcd.LEFT  , 'Left'  , lcd.RED),
+           #(lcd.UP    , 'Up'    , lcd.BLUE),
+           #(lcd.DOWN  , 'Down'  , lcd.GREEN),
+           (lcd.RIGHT , 'Fetching Value...' , lcd.VIOLET, lcd.dogevalue))
     
-    print "Try buttons on plate"
-    lcd.clear()
-    lcd.message("Try buttons")
     prev = -1
     while True:
         for b in btn:
@@ -478,5 +485,7 @@ if __name__ == '__main__':
                     lcd.clear()
                     lcd.message(b[1])
                     lcd.backlight(b[2])
+                    # check syntax below?
+                    (b[3])
                     prev = b
                 break
