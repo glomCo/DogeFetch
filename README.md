@@ -8,3 +8,7 @@ Uses a Raspberry Pi and an IC2-based LED display.
 Programmed in Python. (see main.py)
 
 Currently a WIP.
+
+==============
+
+DIY instructions coming soon.
