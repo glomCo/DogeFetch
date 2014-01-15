@@ -16,11 +16,11 @@ col = (('Red' , lcd.RED) , ('Yellow', lcd.YELLOW), ('Green' , lcd.GREEN),
     
     #lcd.message("BALANCE:", \n, balance)
 
-    btn = ((lcd.LEFT, 'Fetching Balance...', lcd.RED, lcd.addressvalue(DLLAyRd9qA6LVcJiWk2wMNjEqEVUVwbARc)),
+    btn = ((lcd.LEFT, 'Fetching Balance', lcd.RED, lcd.addressvalue(DLLAyRd9qA6LVcJiWk2wMNjEqEVUVwbARc)),
            #(lcd.LEFT  , 'Left'  , lcd.RED),
            #(lcd.UP    , 'Up'    , lcd.BLUE),
            #(lcd.DOWN  , 'Down'  , lcd.GREEN),
-           (lcd.RIGHT , 'Fetching Value...' , lcd.VIOLET, lcd.dogevalue))
+           (lcd.RIGHT , 'Fetching Value' , lcd.VIOLET, lcd.dogevalue))
     
     prev = -1
     while True:
