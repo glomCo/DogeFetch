@@ -434,10 +434,8 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
     def buttons(self):
         return self.i2c.readU8(self.MCP23017_GPIOA) & 0b11111
 
+#--------------------------------------------------------------------------------------------------------------------
 
-    # ----------------------------------------------------------------------
-    # Test code
-    
     def dogeaddress(self):
         sleep(1)
         dogechain = urllib2.urlopen('http://dogechain.info/chain/Dogecoin/q/addressbalance/', self)
@@ -453,7 +451,7 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
         lcd.message("VALUE:", \n, sys.argv[1])
         
 
-if __name__ == '__main__':
+""" if __name__ == '__main__':
 
     # dogechain = balance
     # crypsty = value
@@ -490,3 +488,7 @@ if __name__ == '__main__':
                     (b[3])
                     prev = b
                 break
+                \
+"""
+
+# check DogeFetch.py for name function replacement
