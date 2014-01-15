@@ -446,7 +446,8 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
         lcd.message("BALANCE:", \n, balance)
         
     def dogevalue():
-        # use php here
+        import api_parser
+        print sys.argv[1]
         
 
 if __name__ == '__main__':
@@ -454,21 +455,18 @@ if __name__ == '__main__':
     # dogechain = balance
     # crypsty = value
     # remember to import address
-
     
-
-
+    col = (('Red' , lcd.RED) , ('Yellow', lcd.YELLOW), ('Green' , lcd.GREEN),
+           ('Teal', lcd.TEAL), ('Blue'  , lcd.BLUE)  , ('Violet', lcd.VIOLET),
+           ('Off' , lcd.OFF) , ('On'    , lcd.ON))
 
     lcd = Adafruit_CharLCDPlate()
     lcd.begin(16, 2)
     lcd.clear()
+    lcd.backlight(GREEN)
     lcd.message("Hello, I'm", \n "DogeFetch!")
+    
     #lcd.message("BALANCE:", \n, balance)
-    sleep(1)
-
-    col = (('Red' , lcd.RED) , ('Yellow', lcd.YELLOW), ('Green' , lcd.GREEN),
-           ('Teal', lcd.TEAL), ('Blue'  , lcd.BLUE)  , ('Violet', lcd.VIOLET),
-           ('Off' , lcd.OFF) , ('On'    , lcd.ON))
 
     btn = ((lcd.LEFT, 'Fetching Balance...', lcd.RED, lcd.addressvalue(DLLAyRd9qA6LVcJiWk2wMNjEqEVUVwbARc)),
            #(lcd.LEFT  , 'Left'  , lcd.RED),
