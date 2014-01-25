@@ -39,7 +39,7 @@ col = (('Red' , lcd.RED) , ('Yellow', lcd.YELLOW), ('Green' , lcd.GREEN),
            #(lcd.LEFT  , 'Left'  , lcd.RED),
            #(lcd.UP    , 'Up'    , lcd.BLUE),
            #(lcd.DOWN  , 'Down'  , lcd.GREEN),
-           (lcd.RIGHT , 'Fetching Value' , lcd.VIOLET, lcd.dogevalue))
+           (lcd.RIGHT , 'Fetching Value' , lcd.VIOLET, lcd.dogevalue_fix))
     
     prev = -1
     while True:
