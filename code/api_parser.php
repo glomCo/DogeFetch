@@ -1,3 +1,5 @@
+<?php
+
 $dogecoin_url='http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=132';
 
 function value($dogecoin_url)
@@ -23,3 +25,5 @@ $doge_main = intval($doge_price);
 print json_encode($doge_main);
 
 exec ( "main.py $doge_main" );
+
+?>
