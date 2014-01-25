@@ -450,5 +450,16 @@ class Adafruit_CharLCDPlate(Adafruit_I2C):
         lcd.backlight(lcd.BLUE)
         lcd.message("VALUE:", \n, sys.argv[1])
         
+    def dogevalue_fix():
+        from DogechainInfoApi import API
+        
+        if __name__ == '__main__':
+
+            api = API()
+            
+            pairs = 'doge_btc,btc_usd'
+            tradingpairs = api.tradingpairs(pairs)
+            print 'TradingPairs: ', 
+        
 
 # check DogeFetch.py for name function replacement
