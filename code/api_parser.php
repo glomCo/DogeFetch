@@ -18,7 +18,7 @@ $doge_price_raw = $coin->return->markets->DOGE->lasttradeprice;
 
 $doge_price = $doge_price_raw * 100000000;
 
-$doge_main = array('s', intval($doge_price));
+$doge_main = intval($doge_price);
 
 print json_encode($doge_main);
 
