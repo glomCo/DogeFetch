@@ -20,6 +20,7 @@
 
 
 from time import sleep
+from CryptoCoinChartsApi import API
 from Adafruit_CharLCDPlate import Adafruit_CharLCDPlate
 
 col = (('Red' , lcd.RED) , ('Yellow', lcd.YELLOW), ('Green' , lcd.GREEN),
