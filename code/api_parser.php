@@ -24,6 +24,6 @@ $doge_main = intval($doge_price);
 
 print json_encode($doge_main);
 
-exec ( "main.py $doge_main" );
+exec ( "python main.py $doge_main" );
 
 ?>
